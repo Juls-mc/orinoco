@@ -1,25 +1,16 @@
 class Ajax {
-    get("http://localhost:3000/api/cameras", callable) {
+    //methode d'appeler une URL avec GET, exécute la fonction callback à la réception de la réponse
+    get(url, callback) {
         const request = new XMLHttpRequest();
-        request.open("GET", "http://localhost:3000/api/cameras");
+        request.open("GET", url);
         request.onreadystatechange = function () {
-            if (this.readyState === XMLHttpRequest.DONE &&
-                this.status === 200) {
-                let response = JSON.parse(this.responseText);
-            } else {
-                reject(request.status);
+            if (request.readyState === XMLHttpRequest.DONE &&
+                request.status === 200) {
+                let response = JSON.parse(request.responseText);
+                callback(response);
             }
         }
-        console.log(response.current_condition.condition)
+        request.send();
     };
-    request.open("GET", "http://localhost:3000/api/cameras");
-    request.send();
-    return promise;
+
 }
-
-
-const ajax = new Ajax();
-ajax.get('http://localhost:3000/api/cameras', (response) => {
-
-    console.log(response);
-});
