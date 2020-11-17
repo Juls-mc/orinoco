@@ -51,9 +51,6 @@ fetch(url)
             h4.appendChild(elePrice)
             p.appendChild(eleDescription)
 
-            img.style.height = "25%";
-            img.style.width = "35%";
-
         })
     })
     .catch(function (error) {
