@@ -99,9 +99,9 @@ p {
 #cam_list a {
     display: flex;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    color: #ffcc99 !important;
+    color:coral !important;
 }
 
 
@@ -152,6 +152,15 @@ img {
     justify-content: space-around;
 }
 
+.btn-secondary a{
+    color: white !important;
+}
+
 #quantiteProduit,#lense-select{
     width: 300px;
+}
+
+#img_conf{
+    opacity: 0.4;
+    border-radius: 15px;
 }
