@@ -108,8 +108,8 @@ p {
 img {
     display: flex;
     justify-content: center !important;
-    height: 25%;
-    width: 35%;
+    height: 40%;
+    width: 25%;
 }
 
 .container {
@@ -140,20 +140,21 @@ img {
     max-width: 800px;
 }
 
-#titre,#image,#prix,#description,#lense-select,#quantiteProduit,#bouton{
-    display: flex;
-    justify-items: center;
-    max-width: 500px;
-
-}
-
 #bouton{
     padding-top: 30px;
     justify-content: space-around;
 }
 
-.btn-secondary a{
+#btn-ajouter{
+    color: black;
+    background-color:#ffcc99;
+    border-color: #ffcc99;
+}
+
+#btn-liste{
     color: white !important;
+    background-color:#ffcc99;
+    border-color: #ffcc99;
 }
 
 #quantiteProduit,#lense-select{
