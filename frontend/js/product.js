@@ -1,11 +1,11 @@
-const container = document.getElementById("single_product")
+const container = document.getElementById("product")
 
 /// récupération de l'id produit dans l'url avec la méthode URLSearchParams
 let urlSearchParams = new URLSearchParams(document.location.search)
 let id = urlSearchParams.get("id")
 
 //  affichage produit dans la page
-let request = new XMLHttpRequest() //crée un nouvel objet de type  XMLHttpRequest  qui correspond à notre objet AJAX
+let request = new XMLHttpRequest()
 request.onreadystatechange = function () {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
         cameras = JSON.parse(this.responseText)
@@ -35,7 +35,6 @@ function affichageProduit() {
         lenses[lense] = new Option(element, element)
     })
 
-
     //sélection des lentilles
     let selectionLense = document.getElementById("lense-select").addEventListener("change", function (e) {
         selectionLense = e.target.value;
@@ -46,10 +45,9 @@ function affichageProduit() {
         quantiteProduit = e.target.value
     })
 
-
     //bouton ajouter au panier
-    let ajouter_panier = document.getElementById("btn-ajouter")
-    ajouter_panier.addEventListener("click", function () {
+    let ajouterPanier = document.getElementById("btn-ajouter")
+    ajouterPanier.addEventListener("click", function () {
         if (selectionLense != undefined && quantiteProduit != undefined) {
             cameras.lenses = selectionLense
             cameras.quantity = quantiteProduit
@@ -84,8 +82,8 @@ function prixTotal() {
     let prixDuPanier = JSON.parse(localStorage.getItem('prixTotal')); // je recupère le prix total dans le storage et le stocke dans la variable
 
     if (prixDuPanier != null) { // s'il y a queque chose dans le panier
-        localStorage.setItem("prixTotal", prixDuPanier + (price / 100 * cameras.quantity)); // alors créé une donnée prix Total qui va correspondre à la somme de ce qu'il y a déjà dans le panier + du prix de l'ourson x la quantité
-    } else { // alors créé un prix total qui corresponde au prix de l'ourson x sa quantité
+        localStorage.setItem("prixTotal", prixDuPanier + (price / 100 * cameras.quantity)); // alors créé une donnée prix Total qui va correspondre à la somme de ce qu'il y a déjà dans le panier + du prix de la caméra x la quantité
+    } else { // alors créé un prix total qui corresponde au prix de la caméra x sa quantité
         localStorage.setItem("prixTotal", price / 100 * cameras.quantity);
     }
 }
@@ -102,8 +100,8 @@ function ajoutLocalStorage() {
             panier = {
                 ...panier,
                 [name]: cameras
-            } // ajoute au panier tous les caractéristiques de teddies
-        } else { // sinon ne créé pas un nouvel objet mais ajoute + le nombre de quantité dans la colonne quantité
+            }
+        } else {
             let quantity = parseInt(element.quantity);
             quantity += parseInt(cameras.quantity);
             element.quantity = quantity;
