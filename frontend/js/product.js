@@ -33,7 +33,7 @@ function affichageProduit() {
     let options = cameras.lenses
     options.forEach(function (element, lense) {
         lenses[lense] = new Option(element, element)
-    })
+    });
 
     //sélection des lentilles
     let selectionLense = document.getElementById("lense-select").addEventListener("change", function (e) {
@@ -43,47 +43,46 @@ function affichageProduit() {
     // sélection de la quantité
     let quantiteProduit = document.getElementById("quantiteProduit").addEventListener('change', function (e) {
         quantiteProduit = e.target.value
-    })
+    });
 
     //bouton ajouter au panier
-    let ajouterPanier = document.getElementById("btn-ajouter")
+    let ajouterPanier = document.getElementById("btn-ajouter");
     ajouterPanier.addEventListener("click", function () {
         if (selectionLense != undefined && quantiteProduit != undefined) {
-            cameras.lenses = selectionLense
-            cameras.quantity = quantiteProduit
-            prixTotal()
-            ajoutLocalStorage()
+            cameras.lenses = selectionLense;
+            cameras.quantity = quantiteProduit;
+            prixTotal();
+            ajoutLocalStorage();
 
         } else if (selectionLense == undefined && quantiteProduit != undefined) {
-            cameras.lenses = cameras.lenses[0]
-            cameras.quantity = quantiteProduit
-            prixTotal()
-            ajoutLocalStorage()
+            cameras.lenses = cameras.lenses[0];
+            cameras.quantity = quantiteProduit;
+            prixTotal();
+            ajoutLocalStorage();
 
         } else if (selectionLense != undefined && quantiteProduit == undefined) {
-            cameras.lenses = selectionLense
-            cameras.quantity = 1
-            prixTotal()
-            ajoutLocalStorage()
+            cameras.lenses = selectionLense;
+            cameras.quantity = 1;
+            prixTotal();
+            ajoutLocalStorage();
 
         } else {
-            cameras.lenses = cameras.lenses[0]
-            cameras.quantity = 1
-            prixTotal()
-            ajoutLocalStorage()
-
+            cameras.lenses = cameras.lenses[0];
+            cameras.quantity = 1;
+            prixTotal();
+            ajoutLocalStorage();
         }
     })
 }
 
-//enregistrement du prix total dans localstorage pour le proposer dans la page panier et commande
+//enregistrement du prix total dans localstorage pour le proposer dans la page panier et confirmation
 function prixTotal() {
     let price = parseInt(cameras.price); // je récupère le prix des cameras et le stock dans une variable
     let prixDuPanier = JSON.parse(localStorage.getItem('prixTotal')); // je recupère le prix total dans le storage et le stocke dans la variable
 
     if (prixDuPanier != null) { // s'il y a queque chose dans le panier
-        localStorage.setItem("prixTotal", prixDuPanier + (price / 100 * cameras.quantity)); // alors créé une donnée prix Total qui va correspondre à la somme de ce qu'il y a déjà dans le panier + du prix de la caméra x la quantité
-    } else { // alors créé un prix total qui corresponde au prix de la caméra x sa quantité
+        localStorage.setItem("prixTotal", prixDuPanier + (price / 100 * cameras.quantity));
+    } else { //  prix total qui corresponde au prix de la caméra x sa quantité
         localStorage.setItem("prixTotal", price / 100 * cameras.quantity);
     }
 }
