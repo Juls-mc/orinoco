@@ -8,7 +8,7 @@ function affichagePanier() {
 
     let tableauPanier = document.getElementById("afficheProduitPanier")
 
-    // affichage du prix total du panier si le panier:
+    // affichage du prix total du panier
     if (prixTotal != null) {
         prixPanier.textContent = 'Le montant total de votre commande est de : ' + prixTotal + ' €';
         prixPanier.id = 'prixTotal';
@@ -46,8 +46,12 @@ function affichagePanier() {
             tr.appendChild(quantite)
 
             let prix = document.createElement("td")
-            prix.textContent = cameras.price / 100 + "€"
+            prix.textContent = cameras.price / 100 + " €"
             tr.appendChild(prix)
+
+            let prixTotalCam = document.createElement("td")
+            prixTotalCam.textContent = cameras.price / 100 * cameras.quantity + " €"
+            tr.appendChild(prixTotalCam)
 
             console.log("Voici le panier :")
             console.log(panier)
