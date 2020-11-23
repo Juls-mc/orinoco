@@ -101,7 +101,7 @@ p {
     justify-content: center;
     font-size: 1.4rem;
     font-weight: bold;
-    color:coral !important;
+    color: coral !important;
 }
 
 
@@ -130,7 +130,7 @@ img {
     margin: 20px;
 }
 
-#product{
+#product {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,28 +140,29 @@ img {
     max-width: 600px;
 }
 
-#bouton{
+#bouton {
     padding-top: 30px;
     justify-content: space-around;
 }
 
-#btn-ajouter{
+#btn-ajouter {
     color: black;
-    background-color:#ffcc99;
+    background-color: #ffcc99;
     border-color: #ffcc99;
 }
 
-#btn-liste{
+#btn-liste {
     color: white !important;
-    background-color:#ffcc99;
+    background-color: #ffcc99;
     border-color: #ffcc99;
 }
 
-#quantiteProduit,#lense-select{
+#quantiteProduit,
+#lense-select {
     width: 300px;
 }
 
-#img_conf{
+#img_conf {
     opacity: 0.4;
     border-radius: 15px;
     display: flex;
