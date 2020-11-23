@@ -55,9 +55,9 @@ fetch(url)
 
 
 
-            container.className="d-flex flex-wrap justify-content-center lg-flex-row sm-flex-column mx-auto"
-            div.className ="card m-5 border-light col-10 offset-1 col-md-4 col-lg-3 bg-light text-black"
-            img.className ="card-img-top my-3"
+            container.className = "d-flex flex-wrap justify-content-center lg-flex-row sm-flex-column mx-auto"
+            div.className = "card m-5 border-light col-10 offset-1 col-md-4 col-lg-3 bg-light text-black"
+            img.className = "card-img-top my-3"
             a.className = "btn btn-light offset-6 m-3"
         })
     })
