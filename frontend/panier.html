@@ -42,146 +42,82 @@
         <div class="sous_titre"> Livraison rapide et paiement sécurisé</div>
     </header>
 
-
     <main>
         <h2>Votre panier</h2>
-
-
-
         <div class="container">
 
-            <div class="row">
-                <div class="col-md-4 order-md-2 mb-4">
-
-                    <ul class="list-group mb-3 sticky-top">
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <div>
-                                <h6 class="commande">Commande</h6>
-                            </div>
-
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <div>
-                                <h6 class="my-0"> </h6>
-                            </div>
-                            <span class="text-muted"> </span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <div>
-                                <h6 class="my-0"> </h6>
-
-                            </div>
-                            <span class="text-muted"> </span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <div>
-                                <h6 class="my-0"> </h6>
-                            </div>
-                            <span class="text-muted"> </span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Total (EUR)</span>
-                            <strong> </strong>
-                        </li>
-                    </ul>
-
+            <div id="tableauPanier" class="card border-dark">
+                <table class="table bg-light">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Produit</th>
+                            <th>Lentille</th>
+                            <th>Quantité</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody id="afficheProduitPanier">
+                    </tbody>
+                </table>
+                <h4 id="affichageTotal"></h4>
+            </div>
+            <br>
+            <div class="card border-dark form-container">
+                <div class="card-header text-center bg-light">
+                    <h2>Vos coordonnées</h2>
                 </div>
-                <div class="col-md-8 order-md-1">
-                    <h4 class="mb-3">Vos coordonnées</h4>
-                    <form class="needs-validation" novalidate="">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="firstName">Prénom</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-                                <div class="invalid-feedback"> Veuillez entrer un prénom valide. </div>
+                <div class="card-body">
+                    <form class="form">
+                        <div class="form-row my-3">
+                            <label for="firstName" class="col-md-2 col-form-label">Prénom</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="firstName" placeholder="" />
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="lastName">Nom</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-                                <div class="invalid-feedback"> Veuillez entrer un nom valide. </div>
+                        </div>
+                        <div class="form-row my-3">
+                            <label for="lastName" class="col-md-2 col-form-label">Nom</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="lastName" placeholder="" />
                             </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="" value="" required="">
-                            <div class="invalid-feedback">Veuillez entrer une adresse e-mail valide.  </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="address">Adresse</label>
-                            <input type="text" class="form-control" id="address" placeholder="" required="">
-                            <div class="invalid-feedback"> Veuillez entrer une adresse postable valide.</div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-5 mb-3">
-                                <label for="country">Pays</label>
-                                <select class="custom-select d-block w-100" id="country" required="">
-                                    <option value="">Choisir</option>
-                                    <option>France</option>
-
-                                </select>
-                                <div class="invalid-feedback"> Veuillez choisir un pays. </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="city">Ville</label>
-                                <select class="custom-select d-block w-100" id="city" required="">
-                                    <option value="">Choisir</option>
-                                    <option>Lyon</option>
-                                    <option>Paris</option>
-                                    <option>Bordeaux</option>
-                                    <option>Marseille</option>
-                                </select>
-                                <div class="invalid-feedback"> Veuillez choisir une ville.  </div>
-                            </div>
-
-                        </div>
-                        <hr class="mb-4">
-
-
-                        <h4 class="mb-3">Payment</h4>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="cc-name">Nom sur la carte de crédit</label>
-                                <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                                <div class="invalid-feedback"> Veuillez entrer un nom valide.  </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="cc-number">Numéro de carte de crédit</label>
-                                <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-                                <div class="invalid-feedback"> Veuillez entrer un numéro de carte valide.  </div>
+                        <div class="form-row my-3">
+                            <label for="inputEmail" class="col-md-2 col-form-label">Email</label>
+                            <div class="col-md-5">
+                                <input type="email" class="form-control" id="inputEmail" placeholder="" />
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label for="cc-expiration">Expiration</label>
-                                <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
-                                <div class="invalid-feedback"> Entrer une date d'expiration </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="cc-cvv">CVV</label>
-                                <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
-                                <div class="invalid-feedback"> Entrer code CVV </div>
+                        <div class="form-row my-3">
+                            <label for="telephoneNumber" class="col-md-2 col-form-label">Téléphone</label>
+                            <div class="col-md-5">
+                                <input type="tel" maxlength="10" class="form-control" id="telephoneNumber" placeholder="" />
                             </div>
                         </div>
-                        <hr class="mb-4">
-                        <button class="btn btn-primary btn-lg btn-block" type="submit"><a href="confirmation.html">Valider l'achat</a></button>
+                        <div class="form-row my-3">
+                            <label for="inputAddress" class="col-md-2 col-form-label">Adresse</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="inputAddress" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="form-row my-3">
+                            <label for="inputCity" class="col-md-2 col-form-label">Ville</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="inputCity" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="form-row my-3">
+                            <label for="inputZip" class="col-md-2 col-form-label">Code Postal</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="inputZip" placeholder="" />
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
 
+            <a href="confirmation.html" class="btn btn-success col-6 offset-3 col-md-4 offset-md-4 my-4 disabled">Valider la commande</a>
         </div>
-
-
-
-
-
-
-
     </main>
-
 
     <!-- Footer -->
     <footer class="page-footer font-small special-color-dark pt-4">
@@ -233,6 +169,4 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-
-</html>
+</body></html>
