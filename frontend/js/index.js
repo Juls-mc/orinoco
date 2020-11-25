@@ -2,15 +2,6 @@ let container = document.getElementById("cam_list") // Création variable contai
 let url = "http://localhost:3000/api/cameras"
 
 
-// ci dessous test d'utilisation
-const ajax = new Ajax();
-ajax.get('http://localhost:3000/api/cameras', (response) => {
-
-    console.log(response);
-});
-
-
-
 // Récupère les données de l'API avec fetch
 fetch(url)
     .then(cameras => cameras.json()) // Retourner une promesse
