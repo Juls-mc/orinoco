@@ -168,3 +168,10 @@ img {
     display: flex;
     justify-content: center !important;
 }
+
+#btn-validation{
+    padding: 8px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #ffcc99;
+}
