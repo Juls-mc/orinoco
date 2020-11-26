@@ -4,6 +4,7 @@ function affichagePanier() {
     let panier = JSON.parse(localStorage.getItem("panier"))
     let prixTotal = JSON.parse(localStorage.getItem("prixTotal"))
     let prixPanier = document.getElementById('affichageTotal')
+    let suppr = localStorage.removeItem("");
 
 
     let tableauPanier = document.getElementById("afficheProduitPanier")
@@ -22,7 +23,7 @@ function affichagePanier() {
     // si il n'y a rien dans le panier, affiche "Le panier est vide!"
     if (panier == null) {
         let div = document.createElement("div")
-        div.textContent = "Votre panier est vide!"
+        div.textContent = "Votre panier est vide !"
         afficheProduitPanier.appendChild(div)
         console.log("Le panier est vide")
     } else {
@@ -52,6 +53,15 @@ function affichagePanier() {
             let prixTotalCam = document.createElement("td")
             prixTotalCam.textContent = cameras.price / 100 * cameras.quantity + " €"
             tr.appendChild(prixTotalCam)
+
+
+
+            const emptyButton = document.getElementById("empty")
+
+            emptyButton.addEventListener("click", function () { // Sur un click de "emptyButton"
+                localStorage.clear("prixPanier");
+                window.location.reload()
+            })
 
             console.log("Voici le panier :")
             console.log(panier)
