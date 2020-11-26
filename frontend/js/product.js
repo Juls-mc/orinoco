@@ -73,6 +73,11 @@ function affichageProduit() {
             ajoutLocalStorage();
         }
     })
+
+    //message d'alerte quand produit est ajouté au panier
+    ajouterPanier.addEventListener('click', function(){
+        alert("L'article à bien été ajouté au panier")
+    });
 }
 
 //enregistrement du prix total dans localstorage pour le proposer dans la page panier et confirmation
