@@ -4,8 +4,6 @@ function affichagePanier() {
     let panier = JSON.parse(localStorage.getItem("panier"))
     let prixTotal = JSON.parse(localStorage.getItem("prixTotal"))
     let prixPanier = document.getElementById('affichageTotal')
-    let suppr = localStorage.removeItem("");
-
 
     let tableauPanier = document.getElementById("afficheProduitPanier")
 
@@ -69,3 +67,116 @@ function affichagePanier() {
     }
 }
 affichagePanier() // appel de la fonction
+
+
+//création des variables d'informations client
+let orderButton = document.querySelector(".order-submit");
+let validationButton = document.querySelector(".validation");
+let firstName = document.querySelector("#firstName");
+let lastName = document.querySelector("#lastName");
+let eMail = document.querySelector("#inputEmail");
+let telephoneNumber = document.querySelector("#telephoneNumber");
+let address = document.querySelector("#inputAddress");
+let city = document.querySelector("#inputCity");
+let zip = document.querySelector("#inputZip");
+
+
+// création de l'objet général client
+function Client(firstName, lastName, eMail, telephoneNumber, address, city, zip) {
+    (this.firstName = firstName),
+    (this.lastName = lastName),
+    (this.eMail = eMail),
+    (this.telephoneNumber = telephoneNumber),
+    (this.address = address),
+    (this.city = city),
+    (this.zip = zip);
+}
+
+//création d'un tableau avec les articles commandés
+let panier = JSON.parse(localStorage.getItem("panier"))
+let listIdProduct = [];
+for (let i = 0; i < panier.length; i++) {
+    listIdProduct.push(panier[i].iD);
+}
+localStorage.setItem("products", JSON.stringify(listIdProduct));
+listIdProduct = localStorage.getItem("products");
+listIdProduct = JSON.parse(listIdProduct);
+
+
+// création du gestionnaire d'événement en cas de clic sur le bouton submit
+if (panier == null) {
+    alert("Votre panier est vide vous ne pouvez pas passer commande.")
+} else {
+    orderButton.classList.remove("disabled");
+}
+
+// fonction qui permet de valider chaque input
+function validationInput() {
+    let regexEmail = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/
+    if (firstName.value.length === 0) {
+        alert("Merci d'entrer un prénom valide.")
+    } else if (lastName.value.length === 0) {
+        alert("Merci d'entrer un nom valide.")
+    } else if (eMail.value.length === 0 || !regexEmail.test(eMail.value)) {
+        alert("Merci d'entrer une adresse email valide")
+        eMail.style.borderColor = "red"
+    } else if (address.value.length === 0) {
+        alert("Merci d'entrer une adresse valide.")
+    } else if (telephoneNumber.value.length === 0) {
+        alert("Merci d'entrer un numéro valide.")
+    } else if (city.value.length === 0) {
+        alert("Merci d'entrer une ville valide.")
+    } else if (zip.value.length === 0) {
+        alert("Merci d'entrer un code postal valide.")
+    } else {
+        alert("Vos informations ont bien été enregistrées! Vous pouvez à présent valider votre commande.");
+        validationButton.classList.remove("disabled");
+        send() // si tout est ok on créé un nouveau client et on envoie au serveur
+    }
+}
+
+// Gestionnaire événément en cas de clic sur confirmer
+orderButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    validationInput() // appel de la fonction on vérfie les inputs
+});
+
+//création fonction send
+function send() {
+    // Création nouveau client
+    let newClient = new Client(
+        firstName.value,
+        lastName.value,
+        eMail.value,
+        telephoneNumber.value,
+        address.value,
+        city.value,
+        zip.value
+    );
+    // POST API
+    fetch("http://localhost:3000/api/cameras/order", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                contact: {
+                    firstName: newClient.firstName,
+                    lastName: newClient.lastName,
+                    address: newClient.address,
+                    city: newClient.city,
+                    email: newClient.eMail,
+                },
+                products: listIdProduct,
+            }),
+        })
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then((data) => {
+            localStorage.setItem("orderInfos", JSON.stringify(data));
+        })
+        .catch((error) => console.log("erreur de type : ", error));
+}
