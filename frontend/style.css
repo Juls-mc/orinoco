@@ -151,7 +151,7 @@ img {
     border-color: #ffcc99;
 }
 
-#btn-liste {
+#btn-liste,#btn-panier {
     color: white !important;
     background-color: #ffcc99;
     border-color: #ffcc99;
@@ -170,8 +170,23 @@ img {
 }
 
 #btn-validation{
-    padding: 8px;
+    padding: 7px;
     margin-top: 20px;
     border-radius: 5px;
     background-color: #ffcc99;
+}
+
+#empty{
+
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #ffcc99;
+    border-color: #ffcc99;
+    margin: 20px;
+}
+
+#afficheProduitPanier div{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
 }
