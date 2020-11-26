@@ -162,21 +162,6 @@ img {
     width: 300px;
 }
 
-#img_conf {
-    opacity: 0.4;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center !important;
-}
-
-#btn-validation{
-    padding: 7px;
-    margin-top: 20px;
-    border-radius: 5px;
-    background-color: #ffcc99;
-    font-weight: bold;
-}
-
 #empty{
 
     padding: 7px;
@@ -191,4 +176,13 @@ img {
     display: flex;
     justify-content: center;
     padding: 5px;
+}
+
+.btn-success{
+    padding: 10px !important;
+    border-radius: 5px!important;
+    background-color: #ffcc99!important;
+    border-color: #ffcc99!important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
 }
