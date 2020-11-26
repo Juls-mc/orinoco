@@ -61,7 +61,8 @@
                 </table>
                 <h4 class="font-weight-bold" id="affichageTotal"></h4>
                 <div class="d-flex justify-content-end">
-                <button id="empty" class="col-md-3">Supprimer mon panier</button></div>
+                    <button id="empty" class="col-md-3">Supprimer mon panier</button>
+                </div>
             </div>
             <br>
             <div class="card border-dark form-container">
@@ -110,13 +111,21 @@
                         <div class="form-row my-3">
                             <label for="inputZip" class="col-md-2 col-form-label">Code Postal</label>
                             <div class="col-md-5">
-                                <input type="text" class="form-control" id="inputZip" placeholder="" />
+                                <input type="text" class="form-control" id="inputZip" placeholder="">
                             </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn order-submit disabled">
+                                Confirmer mes coordonnées
+                            </button>
+
                         </div>
                     </form>
                 </div>
+
             </div>
-            <a href="confirmation.html" id="btn-validation" class="d-flex justify-content-center col-md-4"> Valider la commande</a>
+
+            <a href="confirmation.html" class="btn btn-success validation col-6 offset-3 col-md-4 offset-md-4 my-4 disabled">Valider ma commande</a>
         </div>
     </main>
 
@@ -170,4 +179,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body></html>
+</body>
+
+</html>
