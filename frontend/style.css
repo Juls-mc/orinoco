@@ -186,3 +186,7 @@ img {
     font-size: 1.1rem !important;
     font-weight: bold !important;
 }
+
+span{
+    padding-left: 15px;
+}
