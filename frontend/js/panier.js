@@ -12,16 +12,15 @@ function affichagePanier() {
         prixPanier.textContent = 'Le montant total de votre commande est de : ' + prixTotal + ' €';
         prixPanier.id = 'prixTotal';
         let div = document.createElement("div")
-        div.textContent = "Votre panier est vide!"
+
         afficheProduitPanier.appendChild(div)
     } else {
         prixPanier.textContent = 'Le montant de votre commande est de : 0 €';
     }
 
-    // si il n'y a rien dans le panier, affiche "Le panier est vide!"
+    // s'il n'y a rien dans le panier cela affiche "Le panier est vide dans la console"
     if (panier == null) {
         let div = document.createElement("div")
-        div.textContent = "Votre panier est vide !"
         afficheProduitPanier.appendChild(div)
         console.log("Le panier est vide")
     } else {
@@ -52,8 +51,6 @@ function affichagePanier() {
             prixTotalCam.textContent = cameras.price / 100 * cameras.quantity + " €"
             tr.appendChild(prixTotalCam)
 
-
-
             const emptyButton = document.getElementById("empty")
 
             emptyButton.addEventListener("click", function () { // Sur un click de "emptyButton"
@@ -61,12 +58,14 @@ function affichagePanier() {
                 window.location.reload()
             })
 
-            console.log("Voici le panier :")
+            console.log("Contenu du panier :")
             console.log(panier)
         })
     }
 }
 affichagePanier() // appel de la fonction
+
+
 
 
 //création des variables d'informations client
@@ -103,13 +102,6 @@ listIdProduct = localStorage.getItem("products");
 listIdProduct = JSON.parse(listIdProduct);
 
 
-// création du gestionnaire d'événement en cas de clic sur le bouton submit
-if (panier == null) {
-    alert("Votre panier est vide vous ne pouvez pas passer commande.")
-} else {
-    orderButton.classList.remove("disabled");
-}
-
 // fonction qui permet de valider chaque input
 function validationInput() {
     let regexEmail = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/
@@ -129,13 +121,13 @@ function validationInput() {
     } else if (zip.value.length === 0) {
         alert("Merci d'entrer un code postal valide.")
     } else {
-        alert("Vos informations ont bien été enregistrées! Vous pouvez à présent valider votre commande.");
+        alert("Vos informations ont bien été enregistrées! \nVous pouvez valider votre commande ✅ ");
         validationButton.classList.remove("disabled");
-        send() // si tout est ok on créé un nouveau client et on envoie au serveur
+        send() // si tous les champs sont bons => créé un nouveau client et on envoie au serveur
     }
 }
 
-// Gestionnaire événément en cas de clic sur confirmer
+// function event au clic sur confirmer
 orderButton.addEventListener("click", function (event) {
     event.preventDefault();
     validationInput() // appel de la fonction on vérfie les inputs
