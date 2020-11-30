@@ -75,17 +75,17 @@ function affichageProduit() {
     })
 
     //message d'alerte quand produit est ajouté au panier
-    ajouterPanier.addEventListener('click', function(){
+    ajouterPanier.addEventListener('click', function () {
         alert("L'article à bien été ajouté au panier")
     });
 }
 
-//enregistrement du prix total dans localstorage pour le proposer dans la page panier et confirmation
+//enregistrement du prix total dans localstorage
 function prixTotal() {
     let price = parseInt(cameras.price); // je récupère le prix des cameras et le stock dans une variable
     let prixDuPanier = JSON.parse(localStorage.getItem('prixTotal')); // je recupère le prix total dans le storage et le stocke dans la variable
 
-    if (prixDuPanier != null) { // s'il y a queque chose dans le panier
+    if (prixDuPanier != null) { // s'il y a qq chose dans le panier
         localStorage.setItem("prixTotal", prixDuPanier + (price / 100 * cameras.quantity));
     } else { //  prix total qui corresponde au prix de la caméra x sa quantité
         localStorage.setItem("prixTotal", price / 100 * cameras.quantity);
@@ -98,9 +98,9 @@ function ajoutLocalStorage() {
     panier = JSON.parse(panier); // conversion format js
 
     let name = cameras.name + cameras.lenses;
-    if (panier != null) { // s'il y a quelque chose dans le panier
-        let element = panier[name] // la variable element se créé et correspond au panier
-        if (element === undefined) { // si l'élement a ajouté dans le panier n'est pas le même
+    if (panier != null) { // s'il y a qq chose dans le panier
+        let element = panier[name]
+        if (element === undefined) {
             panier = {
                 ...panier,
                 [name]: cameras
