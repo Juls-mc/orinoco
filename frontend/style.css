@@ -48,7 +48,6 @@ footer {
     background-color: #fff2e6;
     font-size: 1.4rem;
     margin: 0px;
-
 }
 
 h3,
@@ -59,8 +58,6 @@ h4 {
 }
 
 h2 {
-    display: flex;
-    justify-content: center;
     padding-top: 30px;
     padding-bottom: 10px;
 }
@@ -92,24 +89,27 @@ p {
     flex-direction: column;
     border: 1px solid #ccc !important;
     border-radius: 16px;
-    padding: 1em 16px;
-    margin: 3em;
+    padding: 20px;
 }
 
 #cam_list a {
     display: flex;
     justify-content: center;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    color: coral !important;
+    background-color: #ffcc99 !important;
+    box-sizing: none !important;
 }
 
+* {
+    box-sizing: none !important;
+}
 
 img {
     display: flex;
     justify-content: center !important;
-    height: 40%;
-    width: 25%;
+    height: 200px;
+    width: 300px;
 }
 
 .container {
@@ -137,7 +137,7 @@ img {
     border: 1px solid #ccc !important;
     border-radius: 16px;
     padding: 50px;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 #bouton {
@@ -151,7 +151,8 @@ img {
     border-color: #ffcc99;
 }
 
-#btn-liste,#btn-panier {
+#btn-liste,
+#btn-panier {
     color: white !important;
     background-color: #ffcc99;
     border-color: #ffcc99;
@@ -162,31 +163,101 @@ img {
     width: 300px;
 }
 
-#empty{
-
+#empty {
     padding: 7px;
     border-radius: 5px;
     background-color: #ffcc99;
     border-color: #ffcc99;
     margin: 20px;
-    font-size: 0.8em
+    font-size: 0.8em;
 }
 
-#afficheProduitPanier div{
+#afficheProduitPanier div {
     display: flex;
     justify-content: center;
     padding: 5px;
 }
 
-.btn-success{
+.btn-success {
     padding: 10px !important;
-    border-radius: 5px!important;
-    background-color: #ffcc99!important;
-    border-color: #ffcc99!important;
+    border-radius: 5px !important;
+    background-color: #ffcc99 !important;
+    border-color: #ffcc99 !important;
     font-size: 1.1rem !important;
     font-weight: bold !important;
 }
 
-span{
+span {
     padding-left: 15px;
+}
+
+.thead-light {
+    max-width: 400px;
+}
+
+
+
+/********* PARTIE RESPONSIVE small screen **********/
+@media screen and (max-width: 767px) {
+
+    #lense-select,
+    #quantiteProduit {
+        max-width: 200px;
+    }
+
+    #bouton {
+        max-width: 200px;
+        flex-direction: column;
+    }
+
+    #btn-ajouter,
+    #btn-liste,
+    #btn-panier {
+        font-size: 0.9em !important;
+    }
+
+    #product {
+        padding-bottom: 0px;
+    }
+
+    #affichageTotal {
+        font-size: 1em;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .btn {
+        white-space: inherit !important;
+    }
+
+    img {
+        display: flex;
+        justify-content: center !important;
+        height: 200px;
+        width: 300px;
+    }
+
+}
+
+
+
+/****** MEDIA QUERY tablet size ******/
+
+@media screen and (min-width: 768px) and (max-width:1025px) {
+
+
+    #lense-select,
+    #quantiteProduit {
+        max-width: 250px;
+    }
+
+    #btn-ajouter,
+    #btn-liste,
+    #btn-panier {
+        font-size: 1em !important;
+    }
+
+    #product {
+        padding-bottom: 0px;
+    }
 }
