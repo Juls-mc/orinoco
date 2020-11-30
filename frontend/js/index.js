@@ -22,7 +22,7 @@ fetch(url)
             let p = document.createElement("p")
             let a = document.createElement("a")
 
-            let eleName = document.createTextNode(name)
+            let eleName = document.createTextNode(name) //Création d'une variable va stocker le nom de l'appareil. il correspondant à la donnée "name" de l'API
             let elePrice = document.createTextNode(price / 100 + " €")
             let eleDescription = document.createTextNode(description)
 
@@ -43,9 +43,7 @@ fetch(url)
             p.appendChild(eleDescription)
 
 
-
-
-
+            //ajout style bootstrap aux éléments
             container.className = "d-flex flex-wrap justify-content-center lg-flex-row sm-flex-column mx-auto"
             div.className = "card m-5 border-light col-10 offset-1 col-md-4 col-lg-3 bg-light text-black"
             img.className = "card-img-top my-3"
