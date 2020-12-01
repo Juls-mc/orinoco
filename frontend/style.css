@@ -90,6 +90,7 @@ p {
     border: 1px solid #ccc !important;
     border-radius: 16px;
     padding: 20px;
+    box-sizing: content-box !important;
 }
 
 #cam_list a {
@@ -98,18 +99,13 @@ p {
     font-size: 1.3rem;
     font-weight: bold;
     background-color: #ffcc99 !important;
-    box-sizing: none !important;
 }
 
-* {
-    box-sizing: none !important;
-}
 
 img {
     display: flex;
     justify-content: center !important;
-    height: 200px;
-    width: 300px;
+    height: 250px;
 }
 
 .container {
@@ -191,10 +187,6 @@ span {
     padding-left: 15px;
 }
 
-.thead-light {
-    max-width: 400px;
-}
-
 
 
 /********* PARTIE RESPONSIVE small screen **********/
@@ -220,8 +212,8 @@ span {
         padding-bottom: 0px;
     }
 
-    #affichageTotal {
-        font-size: 1em;
+    #prixTotal {
+        font-size: 1em !important;
         text-align: center;
         padding: 10px;
     }
@@ -231,12 +223,8 @@ span {
     }
 
     img {
-        display: flex;
-        justify-content: center !important;
         height: 200px;
-        width: 300px;
     }
-
 }
 
 
@@ -244,7 +232,6 @@ span {
 /****** MEDIA QUERY tablet size ******/
 
 @media screen and (min-width: 768px) and (max-width:1025px) {
-
 
     #lense-select,
     #quantiteProduit {
@@ -259,5 +246,9 @@ span {
 
     #product {
         padding-bottom: 0px;
+    }
+
+    img {
+        height: 200px;
     }
 }
