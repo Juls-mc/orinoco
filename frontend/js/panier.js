@@ -77,18 +77,16 @@ let eMail = document.querySelector("#inputEmail");
 let telephoneNumber = document.querySelector("#telephoneNumber");
 let address = document.querySelector("#inputAddress");
 let city = document.querySelector("#inputCity");
-let zip = document.querySelector("#inputZip");
 
 
 // création de l'objet général client
-function Client(firstName, lastName, eMail, telephoneNumber, address, city, zip) {
+function Client(firstName, lastName, eMail, telephoneNumber, address, city) {
     (this.firstName = firstName),
     (this.lastName = lastName),
     (this.eMail = eMail),
     (this.telephoneNumber = telephoneNumber),
     (this.address = address),
-    (this.city = city),
-    (this.zip = zip);
+    (this.city = city);
 }
 
 //création d'un tableau avec les articles commandés
@@ -118,8 +116,6 @@ function validationInput() {
         alert("Merci d'entrer un numéro valide.")
     } else if (city.value.length === 0) {
         alert("Merci d'entrer une ville valide.")
-    } else if (zip.value.length === 0) {
-        alert("Merci d'entrer un code postal valide.")
     } else {
         alert("Vos informations ont bien été enregistrées! \nVous pouvez valider votre commande ✅ ");
         validationButton.classList.remove("disabled");
@@ -142,8 +138,7 @@ function send() {
         eMail.value,
         telephoneNumber.value,
         address.value,
-        city.value,
-        zip.value
+        city.value
     );
     // POST API
     fetch("http://localhost:3000/api/cameras/order", {
