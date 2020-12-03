@@ -5,7 +5,7 @@ let orderInfo = localStorage.getItem("orderInfos");
 orderInfo = JSON.parse(localStorage.orderInfos);
 let prixTotal = JSON.parse(localStorage.getItem("prixTotal"))
 let orderId = orderInfo.orderId;
-let affichageNom = document.querySelector(".name");
+let affichageNom = document.querySelector(".name span");
 let nameGet = localStorage.getItem("orderInfos");
 nameGet = JSON.parse(nameGet);
 
