@@ -117,7 +117,7 @@ function validationInput() {
     } else if (city.value.length === 0) {
         alert("Merci d'entrer une ville valide.")
     } else {
-        alert("Vos informations ont bien été enregistrées! \nVous pouvez valider votre commande ✅ ");
+        alert("Vous pouvez valider votre commande ✅ ");
         validationButton.classList.remove("disabled");
         send() // si tous les champs sont bons => créé un nouveau client et on envoie au serveur
     }
