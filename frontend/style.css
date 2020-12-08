@@ -111,7 +111,7 @@ img {
 .container {
     max-width: 960px;
     margin-bottom: 50px;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .lh-condensed {
@@ -186,7 +186,7 @@ span {
     padding-left: 15px;
 }
 
-#btn_liste{
+#btn_liste {
     display: flex;
     justify-content: center;
     padding: 7px;
@@ -219,7 +219,7 @@ span {
     }
 
     #prixTotal {
-        font-size: 1em !important;
+        font-size: 0.8em !important;
         text-align: center;
         padding: 10px;
     }
@@ -230,6 +230,40 @@ span {
 
     img {
         height: 200px;
+    }
+
+    .table {
+        font-size: 0.5rem;
+    }
+
+    #empty {
+        font-size: 0.6em;
+        width: 45%;
+        padding: 4px;
+
+    }
+
+    h4 {
+        font-size: 0.8em;
+    }
+
+    h1 {
+        font-size: 1.6em !important;
+        padding-left: 20px;
+    }
+
+    .sous_titre {
+        font-size: 1rem;
+    }
+
+    h2,
+    h3 {
+        font-size: 1.4em !important;
+    }
+
+    footer,
+    li {
+        font-size: 1em;
     }
 }
 
