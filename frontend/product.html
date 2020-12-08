@@ -49,15 +49,15 @@
 
         <div id="product" class='row border-light bg-light mx-auto'>
             <div id="generalPresentation" class="pb-3 card  col-md-6 align-self-center m-3 bg-light text-black">
-                <h2 id="titre" class="text-center align-self-top"></h2>
+                <h2 id="titre" class="text-center align-self-top">Titre</h2>
                 <img id="image" src="" alt="photo d'un appareil photo vintage" class="card-img">
             </div>
             <div id="moreOptions" class="col-md-12 align-self-center mb-5 mb-lg-0 bg-light d-flex flex-column">
-                <h3 id="prix" class="my-3"></h3>
+                <h3 id="prix" class="my-3">Prix</h3>
                 <p id="description" class="my-lg-3"></p>
-                <label for="select">Lentilles :</label>
+                <label for="lense-select">Lentilles :</label>
                 <select name="lenses" id="lense-select" class="my-1"></select>
-                <label for="select">Quantité :</label>
+                <label for="quantiteProduit">Quantité :</label>
                 <select name="quantité" id="quantiteProduit" class="mb-3">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -67,8 +67,8 @@
                 </select>
                 <div id="bouton" class="d-flex justify-content-center lg-flex-row sm-flex-column mx-auto">
                     <button id="btn-ajouter" class="btn btn-success m-3">Ajouter au panier</button>
-                    <button id="btn-panier" class="btn btn-success m-3"> <a href="panier.html">Voir le panier</a></button>
-                    <button id="btn-liste" class="btn btn-success m-3"> <a href="index.html">Retour à la liste</a></button>
+                    <a href="panier.html" id="btn-panier" class="btn btn-success m-3"> Voir le panier</a>
+                    <a href="index.html" id="btn-liste" class="btn btn-success m-3"> Retour à la liste</a>
 
 
                 </div>
@@ -123,8 +123,7 @@
     </footer>
     <!-- Footer -->
 
-    <script type="text/javascript" src="js/ajax.js"></script>
-    <script type="text/javascript" src="js/product.js"></script>
+    <script src="js/product.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
