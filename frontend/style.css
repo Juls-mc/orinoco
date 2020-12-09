@@ -195,6 +195,12 @@ span {
     margin: 20px;
 }
 
+.confirm_price{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
 /********* PARTIE RESPONSIVE small screen **********/
 @media screen and (max-width: 767px) {
 
@@ -244,7 +250,7 @@ span {
     }
 
     h4 {
-        font-size: 0.8em;
+        font-size: 0.8em !important;
     }
 
     h1 {
