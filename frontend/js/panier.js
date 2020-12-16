@@ -12,8 +12,8 @@ function affichagePanier() {
         prixPanier.textContent = 'Le montant total de votre commande est de : ' + prixTotal + ' €';
         prixPanier.id = 'prixTotal';
         let div = document.createElement("div")
-
         afficheProduitPanier.appendChild(div)
+
     } else {
         prixPanier.textContent = 'Le montant de votre commande est de : 0 €';
     }

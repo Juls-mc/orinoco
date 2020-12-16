@@ -1,5 +1,3 @@
-const container = document.getElementById("product")
-
 /// récupération de l'id produit dans l'url avec la méthode URLSearchParams
 let urlSearchParams = new URLSearchParams(document.location.search)
 let id = urlSearchParams.get("id")
@@ -51,27 +49,22 @@ function affichageProduit() {
         if (selectionLense != undefined && quantiteProduit != undefined) {
             cameras.lenses = selectionLense;
             cameras.quantity = quantiteProduit;
-            prixTotal();
-            ajoutLocalStorage();
 
         } else if (selectionLense == undefined && quantiteProduit != undefined) {
             cameras.lenses = cameras.lenses[0];
             cameras.quantity = quantiteProduit;
-            prixTotal();
-            ajoutLocalStorage();
 
         } else if (selectionLense != undefined && quantiteProduit == undefined) {
             cameras.lenses = selectionLense;
             cameras.quantity = 1;
-            prixTotal();
-            ajoutLocalStorage();
 
         } else {
             cameras.lenses = cameras.lenses[0];
             cameras.quantity = 1;
-            prixTotal();
-            ajoutLocalStorage();
         }
+
+        prixTotal();
+        ajoutLocalStorage();
     })
 
     //message d'alerte quand produit est ajouté au panier

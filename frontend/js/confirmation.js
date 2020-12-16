@@ -1,7 +1,6 @@
 //création des variables pour l'affichage des données
 let affichagePrixTotal = document.querySelector(".totalPrice span");
 let affichageID = document.querySelector(".commandeID span");
-let orderInfo = localStorage.getItem("orderInfos");
 orderInfo = JSON.parse(localStorage.orderInfos);
 let prixTotal = JSON.parse(localStorage.getItem("prixTotal"))
 let orderId = orderInfo.orderId;
